@@ -1,15 +1,15 @@
-import * as React from "react";
-import { bindActionCreators } from "redux";
-import { test } from "../actions";
-const { connect } = require("react-redux");
+import * as React from 'react';
+import { bindActionCreators } from 'redux';
+import { test } from '../actions';
+const { connect } = require('react-redux');
 
-function mapStateToProps(state: any) {
+function mapStateToProps(state: any): any {
   return {
     count: state.test.count,
   };
 }
 
-function matchDispatchToProps(dispatch: any) {
+function matchDispatchToProps(dispatch: any): any {
   return bindActionCreators({
     test: test as () => {},
   }, dispatch);
@@ -21,31 +21,33 @@ export class Home extends React.Component<IHomeProps, any>{
     super(props, context);
   }
 
-  componentDidMount() {
+  componentDidMount(): void {
     window.addEventListener('keydown', this.handleKeyDown, false);
   }
 
-  componentWillUnmount() {
+  componentWillUnmount(): void {
     window.removeEventListener('keydown', this.handleKeyDown, false);
   }
 
   private handleKeyDown = (e: any) => {
     e.preventDefault();
     switch (e.key) {
-      case "Enter":
+      case 'Enter':
         this.props.test();
         break;
       default:
         return false;
     }
-  };
+  }
 
-  render() {
-    return <div>{this.props.count}</div>
+  render(): React.ReactElement {
+    return <div>{
+      this.props.count
+    }</div>;
   }
 }
 
 export interface IHomeProps {
   count?: number;
-  test?: () => {};
+  test?: Function;
 }

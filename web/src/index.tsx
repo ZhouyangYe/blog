@@ -1,13 +1,13 @@
-import * as React from "react";
-import * as ReactDom from "react-dom";
+import * as React from 'react';
+import * as ReactDom from 'react-dom';
 
-import { Home } from "./components";
-import { Provider } from "react-redux";
-import { appStore } from "./store";
+import { Provider } from 'react-redux';
+import { Home } from './components';
+import { appStore } from './store';
 
 ReactDom.render(
-  <Provider store={appStore}>
+  <Provider store={ appStore }>
     <Home />
   </Provider>,
-  document.querySelector("#myApp")
+  document.querySelector('#myApp'),
 );

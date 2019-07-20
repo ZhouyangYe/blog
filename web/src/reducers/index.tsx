@@ -1,12 +1,12 @@
 import {
-  combineReducers
-} from "redux";
+  combineReducers,
+} from 'redux';
 import {
-  test
-} from "./test";
+  test,
+} from './test';
 
-const allReducers = combineReducers({
-  test: test,
+const allReducers: any = combineReducers({
+  test,
 });
 
 export default allReducers;

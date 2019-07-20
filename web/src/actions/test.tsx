@@ -1,7 +1,7 @@
 export const test = () => {
-  console.log("action test!");
+  console.log('action test!');
   return {
-    type: "TEST",
-    payload: 1
+    payload: 1,
+    type: 'TEST',
   }
 }
